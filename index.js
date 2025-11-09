@@ -9,6 +9,7 @@ sideBtn.forEach(element => {
 
     sideBtn.forEach(element => element.classList.remove('is-active'))
     element.classList.add('is-active')
+    //================ change the title ==================//
     let selection = element.querySelectorAll("span")[1].textContent;
     console.log(selection)
     if(selection=="Add Event"){
@@ -27,13 +28,12 @@ sideBtn.forEach(element => {
         title.querySelector("h2").innerHTML="Statistics";
         title.querySelector("p").innerHTML="Overview of your events";
     }
+    //========================= change screen ===========================//
 
     screens.forEach(screen => screen.classList.toggle('is-visible', screen.dataset.screen === element.dataset.screen))
-    
-    
     })
-
 })
+//========================= form validation ==============================//
 let myform = document.getElementsByTagName("form")[0] ;
 console.log(myform)
 myform.addEventListener("submit" , (e)=> {
@@ -50,11 +50,13 @@ else{
 alert("formulaire validée");
 }
 })
+//====================== add variant =====================================//
 let variantsparent = document.getElementById("variants-list");
 const btnaddvariant = document.getElementById("btn-add-variant");
+let variantform = document.getElementsByClassName("variant-row")[0];
 btnaddvariant.addEventListener("click", (e)=>{
-variantsparent.classList.add("variant-row");
-console.log(variantsparent)
+const addonevariantform = variantform.innerHTML;
+variantform.innerHTML+=addonevariantform;
 });
 
 
