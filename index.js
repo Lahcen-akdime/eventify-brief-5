@@ -73,6 +73,7 @@ alert("formulaire validée");
 totalevents++; 
 totalseats += Number(eventseats);
 totalprices += Number(eventprice);
+
 localStorage.setItem("totalevents",totalevents);
 localStorage.setItem("totalseats",totalseats);
 localStorage.setItem("totalprices",totalprices);
